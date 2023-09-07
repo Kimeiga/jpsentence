@@ -13,7 +13,7 @@ function makeid(length) {
 export async function load({ params }) {
 
 	console.log(params)
-	let seed = params.seed[0] ?? makeid(4);
+	let seed = params.seed ?? makeid(4);
 
 	let response = await fetch("https://tatoeba.org/en/api_v0/search?from=jpn&orphans=no&sort=random&to=eng&trans_filter=limit&trans_to=eng&unapproved=no&limit=1&current=1&rand_seed=" + seed).then(r => r.json())
 
